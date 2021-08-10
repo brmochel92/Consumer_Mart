@@ -14,7 +14,7 @@ Consumer Mart is a fully-fledged enterprise E-Commerce conception that is still 
 
 ## Status Update
 
-Up until the most recent commit, our Entities file, StoreContext & Migrations, and API Controllers were all in the same project folder.  Since refactoring, I have decided to use dependecy injection and separate the API Controllers from the rest of the code that it depends on. 
+Up until the most recent commit, the Entities file, StoreContext & Migrations, and API Controllers were all in the same project folder.  Since refactoring, I have decided to use dependecy injection and separate the API Controllers from the rest of the code that it depends on. 
 
 Stepping back for a moment, the API Controller depends on the StoreContext/Migrations and the StoreContext/Migrations depends on the Entities.  Because of this, Entities has been placed in it's own separate folder, "Core", and StoreContext/Migrations were placed in it's own separate folder, "Infrastructure."  Doing this required a couple of changes to current namespaces and bringing in the other files as dependencies, but will make debugging and maintaining code simpler and less prone to errors. Now when API requests come in, they go to the API Controller which gets it's dependency injected from the Infrastructure Data.  Based on what the request is, it will either get or set products from the DB based on the DB object given by the Core Entities file.  It is in the Entities file that it knows the specifics about each class, which in our case only has one Product Class and 2 attributes - ID (PK) and Name. 
 
