@@ -22,7 +22,7 @@ Stepping back for a moment, the API Controller depends on the StoreContext/Migra
 
 - Asynchronous HTTP methods used to delegate tasks while allowing other tasks to execute concurrently
 - Using Entity Framework as a way to model our database objects and query ;  We are using SQLITE for our development DB but Entity allows us to migrate to any relational DB that we desire when deploying or in production without losing our database objects provided by the ORM
-- Currently has 5 records in the DB that we can query using two methods provided in our API controller - GetProduct or GetProducts;  primary key is used as a parameter for the GetProduct Method in order to retrieve the product based on the primary key unique identifier.  
+- Currently has 5 records in the DB that we can query using two methods provided in our API controller - GetProduct or GetProducts;  primary key is used as a parameter for the GetProduct Method in order to retrieve the product based on the primary key unique identifier.  Currently testing the API with PostMan until the front-end development is completed. 
 
 ## Future Updates
 
