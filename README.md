@@ -14,19 +14,17 @@ Consumer Mart is a fully-fledged enterprise E-Commerce conception that is still 
 
 ## Status Update
 
-Up until the most recent commit, the Entities file, StoreContext & Migrations, and API Controllers were all in the same project folder.  Since refactoring, I have decided to use dependecy injection and separate the API Controllers from the rest of the code that it depends on. 
-
-Stepping back for a moment, the API Controller depends on the StoreContext/Migrations and the StoreContext/Migrations depends on the Entities.  Because of this, Entities has been placed in it's own separate folder, "Core", and StoreContext/Migrations were placed in it's own separate folder, "Infrastructure."  Doing this required a couple of changes to current namespaces and bringing in the other files as dependencies, but will make debugging and maintaining code simpler and less prone to errors. Now when API requests come in, they go to the API Controller which gets it's dependency injected from the Infrastructure Data.  Based on what the request is, it will either get or set products from the DB based on the DB object given by the Core Entities file.  It is in the Entities file that it knows the specifics about each class, which in our case only has one Product Class and 2 attributes - ID (PK) and Name. 
+Up until the most recent commit, the Entities file, StoreContext & Migrations, and API Controllers were all in the same project folder.  Since refactoring, I have used dependecy injection as a way to avoid dependency on the classes, and instead keep the dependecy on the interfaces themselves.  This allows for reusability and decoupling of the code to make maintainability and testing more efficient.  The architecture of the application now follows a Repository/MVC architecture.  I have added initial seed data to provide actual data to the three tables currently avaialable - Product Brands, Product Types, and Products.  Adding an IRepository interface allows us to keep the StoreContext file less cluttered as it grows in size and the store context file is using an interface to abstract methods from the IRepository Interface.  Currently, the ProductRepository and IProductRepository are being initialized with each HTTP request since the service is added at runtime with an 'AddScoped' method.  I used lambda expressions to include eager loading navigation properties as it queries from the database.  This allows us to retrieve relational attributes from other tables and display back in our API.  Prior to this, we were only getting back 'null' under ProductBrands and ProductTypes;  All of the Entities being created all have a unique identifier as the primary key, so a base entity was created so that each of the consecutive entities abstract from the base entity.  This avoides a lot of repetitive coding.  New HttpGet requests (2) were added for the two new entities to include retrieiving the brands and types from the database.  
 
 ## Features
 
 - Asynchronous HTTP methods used to delegate tasks while allowing other tasks to execute concurrently
 - Using Entity Framework as a way to model our database objects and query ;  We are using SQLITE for our development DB but Entity allows us to migrate to any relational DB that we desire when deploying or in production without losing our database objects provided by the ORM
-- Currently has 5 records in the DB that we can query using two methods provided in our API controller - GetProduct or GetProducts;  primary key is used as a parameter for the GetProduct Method in order to retrieve the product based on the primary key unique identifier.  Currently, I am testing the API with PostMan until the front-end development progresses. 
+- API currently being tested with PostMan until the user-interface has been completed and implemented to interact with the database
 
 ## Future Updates
 
-- Real products added
+- Current database being initialized with hard-coded products (Seed Data) upon program startup
 - API Error Handling
 - More API Features (sorting, searching, filters)
 - Front-End Development (Javascript - Angular Framework)
