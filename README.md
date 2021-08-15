@@ -34,5 +34,7 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 - Expand API - Add Orders, Checkout, Validation, Identity
 - Analyze/Improve Performance 
 - Drop SQLITE and migrate to another relational database 
+- Expand database - more products, brands, typesf
+- Upgrade existing web assets (logo, images)
 
 
