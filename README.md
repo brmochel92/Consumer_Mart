@@ -23,6 +23,8 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 - Asynchronous HTTP methods used to delegate tasks while allowing other tasks to execute concurrently
 - Using Entity Framework as a way to model our database objects and query ;  We are using SQLITE for our development DB but Entity allows us to migrate to any relational DB that we desire when deploying or in production without losing our database objects provided by the ORM
 - DTO to shape and/or flatten data objects in our API;  Implemented AutoMapper package with NuGet with help of a MappingProfile class and ProductURL Resolver for our images URL to display the entire URL;  Enabled static content to be consumed by our API by adding middleware to the Startup Configuration file.
+- Swagger API Documentation
+- API error handling/exceptions 
 
 ## Future Updates
 
