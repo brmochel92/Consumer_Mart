@@ -28,7 +28,7 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 
 ## Future Updates
 
-- More API Features (sorting, searching, filters)
+- Add API Paging, Sorting, Filtering, and Searching
 - Front-End Development (Javascript - Angular Framework)
 - Payment Integration (Stripe)
 - Expand our API - Add Orders, Checkout, Validation, Identity
