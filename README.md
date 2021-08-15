@@ -37,5 +37,8 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 - Expand database - more products, brands, typesf
 - Upgrade existing web assets (logo, images)
 
+## Swagger API Documentation 
+
+![API](https://user-images.githubusercontent.com/62531841/129465619-b666c2c0-2b4e-442d-9460-494e021311c0.png)
 
 
