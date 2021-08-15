@@ -14,7 +14,7 @@ Consumer Mart is a fully-fledged enterprise E-Commerce conception that is still 
 
 ## Features
 
-- Repository/MVC Architecture
+- Repository/MVC Architecture 
 - Added Generic interface and Specifications interface in order to abstract and specify criteria or include statements from the entities since a lot of them share similar methods
 - Task-based Asynchronous Pattern (TAP) used for scalability purposes with our Http Requests and DB queries
 - Using Entity Framework as a way to model our database objects and query ;  We are using SQLITE for our development DB but Entity allows us to migrate to any relational DB that we desire when deploying or in production without losing our database objects provided by the ORM
@@ -23,6 +23,8 @@ Consumer Mart is a fully-fledged enterprise E-Commerce conception that is still 
 - API error handling/exceptions added as Middleware that executes at runtime
 - Implemented dependency injection in several areas of the application including startup where several services are added as core dependencies
 - SQLITE relational database 
+- Configured migration files to be created at runtime with use of dependency injection (added service in startup)
+- Added Eager Loading Navigation Properties to include or lamba statements within our core entities defined by specifications evaluator
 
 ## Future Updates
 
