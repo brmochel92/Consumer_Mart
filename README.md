@@ -28,8 +28,6 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 
 ## Future Updates
 
-- Current database being initialized with hard-coded products (Seed Data) upon program startup
-- API Error Handling
 - More API Features (sorting, searching, filters)
 - Front-End Development (Javascript - Angular Framework)
 - Payment Integration (Stripe)
