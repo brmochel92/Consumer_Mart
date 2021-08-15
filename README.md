@@ -37,7 +37,5 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 - Expand database - more products, brands, typesf
 - Upgrade existing web assets (logo, images)
 
-![](https://ibb.co/FKHm9hF)
 
-![alt text](https://ibb.co/FKHm9hF)
 
