@@ -22,7 +22,6 @@ Up until the most recent commit, the Entities file, StoreContext & Migrations, a
 - Added Generic repository for scalability; Once there are more entities with similar HttpGet methods in the controller, they will be able to use the same Generic Repository (with added specifications to include parameters) which will pass in the correct object type and use the evaluator method that we created to convert to an IQueryable in which the list is enumerated back to the end-user.  
 - Asynchronous HTTP methods used to delegate tasks while allowing other tasks to execute concurrently
 - Using Entity Framework as a way to model our database objects and query ;  We are using SQLITE for our development DB but Entity allows us to migrate to any relational DB that we desire when deploying or in production without losing our database objects provided by the ORM
-- API currently being tested with PostMan until the user-interface has been completed and implemented to interact with the database
 - DTO to shape and/or flatten data objects in our API;  Implemented AutoMapper package with NuGet with help of a MappingProfile class and ProductURL Resolver for our images URL to display the entire URL;  Enabled static content to be consumed by our API by adding middleware to the Startup Configuration file.
 
 ## Future Updates
