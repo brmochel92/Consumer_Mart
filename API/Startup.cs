@@ -1,3 +1,4 @@
+using API.Helpers;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
 
 namespace API
 {
@@ -24,6 +26,7 @@ namespace API
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddControllers();
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddSwaggerGen();
             services.AddDbContext<StoreContext>(x => 
                 x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
@@ -43,6 +46,8 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
